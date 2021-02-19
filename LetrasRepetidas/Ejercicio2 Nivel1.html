@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let nombre = ["M", "O", 1, "C", "H", "O"];
+let vocales = ["A", "E", "I", "O", "U"];
+let numeros = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+for (let letra of nombre) {
+  vocales.includes(letra)
+    ? console.log(`He encontrado la vocal ${letra}`)
+    : numeros.includes(letra)
+    ? console.log(`Los nombres de personas no contienen el número: ${letra}`)
+    : console.log(`He encontrado la consonante ${letra}`);
+}
+    </script>
+
+
+
+</body>
+</html>

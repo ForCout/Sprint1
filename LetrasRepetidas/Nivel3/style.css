@@ -1,0 +1,29 @@
+.interfaz {
+  display: block;
+  margin: auto;
+  margin-top: 100px;
+  padding: 20px;
+  width: 650px;
+  height: 400px;
+  background-color: rgb(92, 95, 95);
+  border-radius: 15px;
+}
+.interfaz td button {
+  display: block;
+  margin-left: 30px;
+  margin-top: 10px;
+  border-radius: 10px;
+  background-color: rgb(224, 223, 220);
+}
+
+#pantalla {
+  display: block;
+  font-size: justify;
+  font-family: Verdana;
+  margin-bottom: 15px;
+  width: 600px;
+  height: 300px;
+  background-color: aliceblue;
+  border-radius: 10px;
+  
+}
