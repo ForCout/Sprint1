@@ -88,6 +88,7 @@ function init() {
     num2 = resultado.textContent;
     clear();
     calculadora(signo, num1, num2);
+    
   };
 }
 function clear() {

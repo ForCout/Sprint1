@@ -101,11 +101,8 @@ function buscaEmails(str) {
     if (coincidencia) {
       correo = correo.replace(patron2, "");
       correo = correo.toLowerCase();
-      if (lista.includes(correo)) {
-        continue;
-      } else {
+      if (lista.includes(correo))continue; 
         lista.push(correo);
-      }
     }
   }
 
