@@ -1,4 +1,4 @@
- let employees = [
+let employees = [
   {
     id: 1,
     name: "Linux Torvalds",
@@ -31,20 +31,27 @@ let salaries = [
 //Ejercicio 1 Nivel 1
 
 let getEmpleado = (id) => {
-  const empleado = employees.find((item) => item.id == id);
-  return new Promise((resolve) => {
-    resolve(empleado.name);
+  let empleado = employees.find((item) => item.id == id);
+
+  return new Promise((resolve, reject) => {
+    if (empleado != undefined) {
+      resolve(empleado);
+    } else {
+      reject("Empleado no encontrado");
+    }
   });
 };
 
-getEmpleado(2).then((empleado) => console.log(empleado));
-
 let getSalario = (empleado) => {
-  const salario = salaries.find((item) => item.id == empleado.id);
-  console.log(salario.salary);
+  let salario = salaries.find((item) => item.id == empleado.id);
+  return new Promise((resolve, reject) => {
+    if (salario != undefined) {
+      resolve(salario.salary);
+    } else {
+      reject("El salario no ha sido encontrado");
+    }
+  });
 };
-
-getSalario(employees[1]);
 
 //Ejercicio 2 Nivel 1
 
@@ -54,12 +61,12 @@ async function salario(id) {
   console.log(empleado.name, sueldo.salary);
 }
 
-salario(1); 
+salario(1);
 
 //Nivel 2
 
 function saludo(nombre) {
-  return new Promise((resolve) => {
+  return new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve(`Te saludo pasado 2 segundos ${nombre}`);
     }, 2000);
@@ -75,20 +82,19 @@ miSaludo("Moncho").then((saludo) => console.log(saludo));
 // Nivel 3
 
 function saludo2(nombre) {
-  return new Promise((resolve) => {
+  return new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve(`Te saludo pasado 2 segundos ${nombre}`);
-    }, 3000);
+    }, 2000);
   });
 }
 
 async function miSaludo2(nombre) {
   try {
-    hhh;
     const a = await saludo(nombre);
     console.log(a);
   } catch (e) {
-    console.log("Se ha producido un error ",e);
+    console.log("Se ha producido un error ", e);
   }
 }
 miSaludo2("Moncho");

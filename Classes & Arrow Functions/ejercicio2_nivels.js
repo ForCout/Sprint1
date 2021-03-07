@@ -4,10 +4,9 @@ class Persona {
   }
 
   decirNombre() {
-   console.log(this.nombre)
+    console.log(this.nombre);
   }
 }
 
-let p = new Persona('Moncho');
+let p = new Persona("Moncho");
 p.decirNombre();
-
